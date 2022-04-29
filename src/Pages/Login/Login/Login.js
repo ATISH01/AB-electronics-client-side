@@ -4,16 +4,27 @@ import { useForm } from 'react-hook-form';
 import * as Yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Link } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../../firebse.init';
 const Login = () => {
+    const [
+        createUserWithEmailAndPassword
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword,
+        user]=useSignInWithEmailAndPassword(auth)
     const formSchema = Yup.object().shape({
         email:Yup.string().email().required('Input Valid Email'),    
     })
     const formOptions = { resolver: yupResolver(formSchema) }
     const { register, handleSubmit, reset, formState } = useForm(formOptions)
     const { errors } = formState;
-
+    if(user){
+        console.log('user');
+    }
     const onSubmit = data => {
         console.log(data);
+        
+        signInWithEmailAndPassword(data.email,data.password)
     }
     return (
         <Row  md={3} className="g-0">
