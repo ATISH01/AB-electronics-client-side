@@ -3,16 +3,19 @@ import './App.css';
 import Banner from './Pages/Home/Banner/Banner';
 
 import NAvigationBar from './Pages/Shared/Navbar/NAvigationBar';
-import Products from './Pages/Home/Products/Products';
+import SignUp from './Pages/Login/SignUp/SignUp'
 import Home from './Pages/Home/Home/Home';
 import { Route, Routes } from 'react-router-dom';
+import Login from './Pages/Login/Login/Login';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <NAvigationBar></NAvigationBar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/signup' element={<SignUp></SignUp>}></Route>
       </Routes>
     </div>
   );
