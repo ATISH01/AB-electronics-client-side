@@ -3,20 +3,21 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import { Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebse.init';
 
 const SignUp = () => {
+    const navigate=useNavigate();
     const [
-        createUserWithEmailAndPassword
+        createUserWithEmailAndPassword,user
     ] = useCreateUserWithEmailAndPassword(auth);
     const formSchema = Yup.object().shape({
 
         email:Yup.string().email().required('Input Valid Email'),
         password: Yup.string()
             .required('Password is mendatory')
-            .min(3, 'Password must be at 3 char long'),
+            .min(5, 'Password must be at 5 char long'),
         confirmPwd: Yup.string()
             .required('Password is mendatory')
             .oneOf([Yup.ref('password')], 'Passwords does not match'),
@@ -28,6 +29,9 @@ const SignUp = () => {
     const onSubmit = data => {
         console.log(data);
         createUserWithEmailAndPassword(data.email,data.password)
+    }
+    if(user){
+        navigate('/')
     }
     return (
         <Row  md={3} className="g-0">

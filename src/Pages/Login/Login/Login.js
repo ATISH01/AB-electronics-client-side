@@ -3,13 +3,11 @@ import { Button, Col, Form, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebse.init';
 const Login = () => {
-    const [
-        createUserWithEmailAndPassword
-    ] = useCreateUserWithEmailAndPassword(auth);
+    const navigate=useNavigate();
     const [signInWithEmailAndPassword,
         user]=useSignInWithEmailAndPassword(auth)
     const formSchema = Yup.object().shape({
@@ -23,8 +21,10 @@ const Login = () => {
     }
     const onSubmit = data => {
         console.log(data);
-        
         signInWithEmailAndPassword(data.email,data.password)
+    }
+    if(user){
+        navigate('/')
     }
     return (
         <Row  md={3} className="g-0">
