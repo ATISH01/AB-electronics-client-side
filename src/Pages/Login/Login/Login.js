@@ -3,11 +3,10 @@ import { Button, Col, Form, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { Link } from 'react-router-dom';
 const Login = () => {
     const formSchema = Yup.object().shape({
-        email:Yup.string().email().required('Input Valid Email'),
-        
-        
+        email:Yup.string().email().required('Input Valid Email'),    
     })
     const formOptions = { resolver: yupResolver(formSchema) }
     const { register, handleSubmit, reset, formState } = useForm(formOptions)
@@ -32,9 +31,7 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control {...register("password", { required: true })} />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
+                <p>New to AB Electronics? <Link to="/signup">SignUp</Link></p>
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
