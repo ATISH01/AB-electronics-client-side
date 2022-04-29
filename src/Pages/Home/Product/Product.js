@@ -5,8 +5,9 @@ import { useNavigate } from 'react-router-dom';
 const Product = ({product}) => {
     const {_id,name,img}=product;
     const navigation=useNavigate()
-    const navigate =(id)=>{
+    const handleNavigate =(id)=>{
         navigation(`/singleitem/${id}`)
+        
     }
     return (
         <div>
@@ -21,7 +22,7 @@ const Product = ({product}) => {
                             lead-in to additional content. This content is a little bit longer.
                         </Card.Text>
                     </Card.Body>
-                    <Button onClick={()=>navigate(_id)}>Manage Item</Button>
+                    <Button onClick={()=>handleNavigate(_id)}>Manage Item</Button>
                 </Card>
             </Col>
         </div>
