@@ -19,6 +19,9 @@ const NAvigationBar = () => {
                             <button className='btn btn-link text-decoration-none' onClick={()=>signOut(auth)}>LogOut</button>:
                             <Nav.Link as={Link} to="/login">Login</Nav.Link>
                         }
+                        {
+                            user&&<Nav.Link as={Link} to="/manageitems">ManageItems</Nav.Link>
+                        }
                         <Nav.Link as={Link} to="/signup">SignUp</Nav.Link>
                         <Nav.Link href="#pricing">Pricing</Nav.Link>
                     </Nav>

@@ -2,12 +2,12 @@ import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-const Product = ({product}) => {
-    const {_id,name,img}=product;
-    const navigation=useNavigate()
-    const handleNavigate =(id)=>{
+const Product = ({ product }) => {
+    const { _id, name, img, description, price, quentity, supplier } = product;
+    const navigation = useNavigate()
+    const handleNavigate = (id) => {
         navigation(`/singleitem/${id}`)
-        
+
     }
     return (
         <div>
@@ -18,11 +18,13 @@ const Product = ({product}) => {
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
                         <Card.Text>
-                            This is a longer card with supporting text below as a natural
-                            lead-in to additional content. This content is a little bit longer.
+                            {description}
                         </Card.Text>
+                        <p>Price:{price}</p>
+                        <p>Quentity:-{quentity}</p>
+                        <p>Supplier:-{supplier}</p>
                     </Card.Body>
-                    <Button onClick={()=>handleNavigate(_id)}>Manage Item</Button>
+                    <Button onClick={() => handleNavigate(_id)}>Manage Item</Button>
                 </Card>
             </Col>
         </div>
