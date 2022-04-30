@@ -10,6 +10,7 @@ import Login from './Pages/Login/Login/Login';
 import SingleItem from './Pages/SingleItem/SingleItem';
 import RequireAuth from './RequireAuth/RequireAuth';
 import ManageItems from './Pages/ManageItems/ManageItems';
+import AddItems from './Pages/AddItems/AddItems';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <SingleItem></SingleItem>
         </RequireAuth>}></Route>
         <Route path='/manageitems' element={<ManageItems></ManageItems>}></Route>
+        <Route path='/additems' element={<AddItems></AddItems>}></Route>
       </Routes>
     </div>
   );
