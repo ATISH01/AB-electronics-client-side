@@ -1,0 +1,27 @@
+.card-color{
+    background-color: #DDDDDD !important;
+}
+.button{
+    height: 50px;
+    background-color: #FF8C32 ;
+    border: none;
+    clip-path: polygon(0 60%, 100% 0%, 100% 100%, 0% 100%);
+}
+.button-text{
+    font-weight: bold;
+    font-size:16px;
+    margin-left: 130px;
+    margin-top: 14px;
+}
+.button:hover{
+    background-color: #f57412;
+}
+.imgClip{
+    clip-path: polygon(0 0, 100% 0%, 100% 83%, 0% 100%);
+    
+}
+.card-color:hover{
+    transform: translateY(10px);
+    transition: .5s;
+    box-shadow: 0 20px 30px 0;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import './Product.css'
 
 const Product = ({ product }) => {
     const { _id, name, img, description, price, quentity, supplier } = product;
@@ -11,20 +12,19 @@ const Product = ({ product }) => {
     }
     return (
         <div>
-
-            <Col className='p-4'>
-                <Card>
-                    <Card.Img variant="top" src={img} />
+            <Col className='p-4 w-75 mx-auto'>
+                <Card className='card-color'>
+                    <Card.Img className='imgClip' variant="top" src={img} />
                     <Card.Body>
-                        <Card.Title>{name}</Card.Title>
-                        <Card.Text>
+                        <Card.Title >{name}</Card.Title>
+                        <Card.Text className='m-0'>
                             {description}
                         </Card.Text>
-                        <p>Price:{price}</p>
-                        <p>Quentity:-{quentity}</p>
-                        <p>Supplier:-{supplier}</p>
+                        <p className='m-0'>Price:{price}</p>
+                        <p className='m-0'>Quentity:-{quentity}</p>
+                        <p className='m-0'>Supplier:-{supplier}</p>
                     </Card.Body>
-                    <Button onClick={() => handleNavigate(_id)}>Manage Item</Button>
+                    <button className='button text-white' onClick={() => handleNavigate(_id)}><p className='button-text'>Update Item</p></button>
                 </Card>
             </Col>
         </div>

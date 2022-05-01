@@ -1,0 +1,38 @@
+.navbar{
+    background-color: #06113C;
+    transition: 110ms;
+    
+}
+.navbar.colored{
+    background-color: #06113cc9;
+    
+    transition: 550ms;
+}
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleY(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #1da4e8;
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  /* @media (max-width: 900px) {
+    .navbar {
+      height:100px;
+    }
+} */

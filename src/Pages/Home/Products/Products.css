@@ -1,0 +1,7 @@
+.text-center{
+    height: 50px;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#5d3411), to(#EEEEEE));
+}
+.body{
+    background-color: #bca2a2;
+}

@@ -1,8 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import Banner from './Pages/Home/Banner/Banner';
-
-import NAvigationBar from './Pages/Shared/Navbar/NAvigationBar';
 import SignUp from './Pages/Login/SignUp/SignUp'
 import Home from './Pages/Home/Home/Home';
 import { Route, Routes } from 'react-router-dom';
@@ -13,11 +9,12 @@ import ManageItems from './Pages/ManageItems/ManageItems';
 import AddItems from './Pages/AddItems/AddItems';
 import MyItems from './Pages/MyItems/MyItems';
 import UpdateProfile from './Pages/Login/UpdateProfile/UpdateProfile';
+import Header from './Pages/Shared/Header/Header';
 
 function App() {
   return (
-    <div>
-      <NAvigationBar></NAvigationBar>
+    <div className='App'>
+      <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
