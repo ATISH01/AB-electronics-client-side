@@ -1,0 +1,14 @@
+.background{
+    background-color: #06113C;
+    height: 100%;
+    color: #AAAAAA;
+}
+.icon-size{
+    font-size: 30px;
+}
+.tite-border{
+    width: 200px;
+    background-color: #e67824;
+    clip-path: polygon(0 0, 91% 0, 100% 100%, 0 100%);
+}
+
