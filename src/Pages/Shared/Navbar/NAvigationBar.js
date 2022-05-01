@@ -7,8 +7,9 @@ import { signOut } from 'firebase/auth';
 
 const NAvigationBar = () => {
     const [user]=useAuthState(auth);
+    console.log(user?.displayName);
     
-    return (
+    return (    
         <div>
             <Navbar bg="light" variant="light">
                 <Container>
@@ -21,9 +22,13 @@ const NAvigationBar = () => {
                         }
                         {
                             user&&<Nav.Link as={Link} to="/manageitems">ManageItems</Nav.Link>
+                            
                         }
-                        <Nav.Link as={Link} to="/signup">SignUp</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                        {
+                            user&&<Nav.Link as={Link} to="/myitem">MyItems</Nav.Link>
+                        }
+                        <Nav.Link >{user?.displayName}</Nav.Link>
+                        
                     </Nav>
                 </Container>
             </Navbar>

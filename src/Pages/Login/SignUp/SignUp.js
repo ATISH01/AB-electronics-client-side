@@ -28,10 +28,10 @@ const SignUp = () => {
 
     const onSubmit = data => {
         console.log(data);
-        createUserWithEmailAndPassword(data.email,data.password)
+        createUserWithEmailAndPassword(data.email,data.password);
     }
     if(user){
-        navigate('/')
+        navigate('/username')
     }
     return (
         <Row  md={3} className="g-0">
@@ -39,11 +39,6 @@ const SignUp = () => {
             <div className="container mt-5 p-3">
             <h2>SignUp Here</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="form-group">
-                    <label>Name</label>
-                    <input {...register("name")} className="form-control" />
-
-                </div>
                 <div className="form-group">
                     <label>Email</label>
                     <input

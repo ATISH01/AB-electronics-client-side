@@ -11,6 +11,8 @@ import SingleItem from './Pages/SingleItem/SingleItem';
 import RequireAuth from './RequireAuth/RequireAuth';
 import ManageItems from './Pages/ManageItems/ManageItems';
 import AddItems from './Pages/AddItems/AddItems';
+import MyItems from './Pages/MyItems/MyItems';
+import UpdateProfile from './Pages/Login/UpdateProfile/UpdateProfile';
 
 function App() {
   return (
@@ -23,8 +25,16 @@ function App() {
         <Route path='/singleitem/:Id' element={<RequireAuth>
           <SingleItem></SingleItem>
         </RequireAuth>}></Route>
-        <Route path='/manageitems' element={<ManageItems></ManageItems>}></Route>
-        <Route path='/additems' element={<AddItems></AddItems>}></Route>
+        <Route path='/manageitems' element={<RequireAuth>
+          <ManageItems></ManageItems>
+        </RequireAuth>}></Route>
+        <Route path='/additems' element={<RequireAuth>
+          <AddItems></AddItems>
+        </RequireAuth>}></Route>
+        <Route path='/myitem' element={<RequireAuth>
+          <MyItems></MyItems>
+        </RequireAuth>}></Route>
+        <Route path='/username' element={<UpdateProfile></UpdateProfile>}></Route>
       </Routes>
     </div>
   );
