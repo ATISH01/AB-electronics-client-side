@@ -12,7 +12,7 @@ const Product = ({ product }) => {
     }
     return (
         <div>
-            <Col className='p-4 w-75 mx-auto'>
+            <Col className='p-4 mx-auto'>
                 <Card className='card-color'>
                     <Card.Img className='imgClip' variant="top" src={img} />
                     <Card.Body>

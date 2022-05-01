@@ -1,0 +1,12 @@
+.container-style{
+    margin: 100px 30px;
+    background-color: #DDDDDD;
+}
+.btn-style{
+    background-color: #FF8C32;
+    border: none;
+    border-radius: 3px;
+    color:white;
+    height: 40px;
+    width: 80px;
+}

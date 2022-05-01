@@ -1,4 +1,7 @@
 .image-height{
-    height: 63vh;
+    height: 65vh;
     object-fit: cover;
+}
+.text-style{
+    text-shadow: 1px 1px 2px #06113C, 0 0 1em rgb(109, 51, 3), 0 0 0.2em rgb(255, 98, 0);
 }

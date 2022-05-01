@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import './SingleItem.css'
 
 const SingleItem = () => {
     const { Id } = useParams();
@@ -77,28 +78,28 @@ const SingleItem = () => {
     }
 
     return (
-        <div className='container'>
+        <div className='container-style'>
             <Row md={2} className="g-3 m-5">
                 <Col xs={12} md={6}>
-                    <img className='img-fluid' src={img} alt="" />
+                    <img className='img-fluid p-3 mb-4' src={img} alt="" />
                 </Col>
                 <Col xs={12} md={6}>
                     <Row md={2}>
-                        <Col xs={12} md={6}>
+                        <Col xs={12} md={6} className='p-3'>
                             <h4>{name}</h4>
                             <p>{description}</p>
                             <p>Price:{price}</p>
                             <p>Quentity:-{quentity}</p>
                             <p>Supplier:-{supplier}</p>
-                            <Button onClick={() => minus(_id)}>Shipped</Button>
+                            <button className='btn-style' onClick={() => minus(_id)}>Shipped</button>
                         </Col>
                         <Col xs={12} md={6}>
-                            <div className='p-2'>
+                            <div className='p-3'>
                                 <h4>Update Quentity for New Shipment</h4>
                                 <form>
                                     <input onChange={inputValue} className='form-control mt-3 w-50' type="text" />
                                     <p>{error}</p>
-                                    <Button  onClick={() => updateQuentity(_id)} className='mt-2'>Update</Button>
+                                    <button  onClick={() => updateQuentity(_id)} className='mt-2 btn-style'>Update</button>
                                     
                                 </form>
                             </div>

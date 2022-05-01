@@ -22,7 +22,7 @@ const Allitem = ({handleDelete, items }) => {
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <Button onClick={()=>handleDelete(_id)} className='d-block ms-auto'>Delete Item</Button>
+                                <button onClick={()=>handleDelete(_id)} className='d-block ms-auto btn-style'>Delete Item</button>
                             </div>
                         </div>
                     </div>

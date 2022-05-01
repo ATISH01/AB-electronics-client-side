@@ -29,7 +29,11 @@ const ManageItems = () => {
     }
     return (
         <div>
-            <Button className='d-block mx-auto' onClick={AddButton}>Add new</Button>
+            <div className='text-button'>
+                <h5>To add new item click here</h5>
+            <button className='btn-style' onClick={AddButton}>Add new</button>
+            </div>
+            
             {
                 allItems.map(items=><Allitem items={items} handleDelete={handleDelete}></Allitem>)
             }
