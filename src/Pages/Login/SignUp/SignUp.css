@@ -1,0 +1,10 @@
+.signup-css{
+    background-color: #DDDDDD !important;
+    padding: 30px;
+    margin: 90px 10px;
+    border-radius: 6px;
+}
+.signup-field-color{
+    background-color: #06113c15 !important;
+    clip-path: polygon(4% 0, 100% 0%, 96% 100%, 0% 100%);
+}

@@ -6,6 +6,7 @@ import { Col, Row } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebse.init';
+import './SignUp.css'
 
 const SignUp = () => {
     const navigate=useNavigate();
@@ -37,15 +38,16 @@ const SignUp = () => {
         <Row  md={3} className="g-0">
             <Col xs={12} md={7} className="mx-auto">
             <div className="container mt-5 p-3">
+            
+            <form onSubmit={handleSubmit(onSubmit)} className='signup-css'>
             <h2>SignUp Here</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
                     <label>Email</label>
                     <input
                         name="email"
                         type="text"
                         {...register('email')}
-                        className="form-control"
+                        className="form-control field-color"
                     />
                     <p>{errors.email?.message}</p>
 
@@ -57,7 +59,7 @@ const SignUp = () => {
                         name="password"
                         type="password"
                         {...register('password')}
-                        className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                        className={`form-control ${errors.password ? 'is-invalid field-color' : 'field-color'}`}
                     />
                     <div className="invalid-feedback">{errors.password?.message}</div>
                 </div>
@@ -67,13 +69,13 @@ const SignUp = () => {
                         name="confirmPwd"
                         type="password"
                         {...register('confirmPwd')}
-                        className={`form-control ${errors.confirmPwd ? 'is-invalid' : ''}`}
+                        className={`form-control ${errors.confirmPwd ? 'is-invalid field-color' : 'field-color'}`}
                     />
                     <div className="invalid-feedback">{errors.confirmPwd?.message}</div>
                 </div>
                 <p>already have an account? <Link to='/login'>Login</Link></p>
                 <div className="mt-3">
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit" className="btn-style">
                         Submit
                     </button>
                 </div>

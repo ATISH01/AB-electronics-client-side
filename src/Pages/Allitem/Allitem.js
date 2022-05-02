@@ -1,34 +1,39 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
+import { FaTrashAlt } from "react-icons/fa";
+import './Allitem.css'
 
 
-const Allitem = ({handleDelete, items }) => {
- 
-    const { _id,name, img } = items;
-    
+const Allitem = ({ handleDelete, items }) => {
+
+    const { _id, name, img } = items;
+
     return (
         <div>
-            <div class="container-fluid w-50">
-                <div class="row">
-                    <div class="col-12 mt-3">
-                        <div class="card">
-                            <div class="card-horizontal">
-                                <div class="img-square-wrapper">
-                                    <img class="" height={200} src={img} alt="" />
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">{name}</h4>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
+            <div>
+                <Col xs={11} md={6} className='review-item mx-auto mt-5 d-flex justify-content-around manage-item-card'>
+                    <div>
+                        <img  src={img} alt="" />
+                    </div>
+                    
+                        <div className="review-item-details-container d-flex align-items-center">
+                            <div className="review-item-details me-4">
+                                <h4 className="product-name">
+                                    {name}
+                                </h4>
+
                             </div>
-                            <div class="card-footer">
-                                <button onClick={()=>handleDelete(_id)} className='d-block ms-auto btn-style'>Delete Item</button>
-                            </div>
+                            <div className="delete-container">
+                                <button className='delete-button' onClick={() => handleDelete(_id)}>
+                                    <FaTrashAlt />
+                                </button>
+                            
                         </div>
                     </div>
-                </div>
+                </Col>
             </div>
-        </div>
+            </div>
+            
 
 
     );
