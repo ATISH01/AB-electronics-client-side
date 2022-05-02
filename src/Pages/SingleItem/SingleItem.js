@@ -9,7 +9,7 @@ const SingleItem = () => {
     const [error, setError] = useState('');
     const { _id, name, img, description, price, quentity, supplier } = single;
     useEffect(() => {
-        fetch(`http://localhost:5000/allItems/${Id}`)
+        fetch(`https://arcane-wave-79126.herokuapp.com/allItems/${Id}`)
             .then(res => res.json())
             .then(data => setSingle(data))
     }, [])
@@ -21,7 +21,7 @@ const SingleItem = () => {
             console.log(`{id:${i}}`);
             console.log(single);
 
-            const url = `http://localhost:5000/allItems/${ID}`;
+            const url = `https://arcane-wave-79126.herokuapp.com/allItems/${ID}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -41,21 +41,21 @@ const SingleItem = () => {
     const inputValue = e => {
         setInput(e.target.value);
         console.log(input);
-        
+
 
     }
     const updateQuentity = ID => {
         console.log(input);
         const newQuentity = (quentity + parseInt(input));
-        if(isNaN(newQuentity)){
-            
+        if (isNaN(newQuentity)) {
+
             setError("Input a value")
             return
         }
-        else{
+        else {
             setError('')
         }
-        
+
         console.log(parseFloat(newQuentity));
         const update = { ...single, quentity: newQuentity }
         const url = `http://localhost:5000/allItems/${ID}`;
@@ -70,7 +70,7 @@ const SingleItem = () => {
             .then(data => {
 
                 setSingle({ ...single, quentity: newQuentity })
-                
+
 
             })
 
@@ -91,7 +91,7 @@ const SingleItem = () => {
                             <p>Price:{price}</p>
                             <p>Quentity:-{quentity}</p>
                             <p>Supplier:-{supplier}</p>
-                            <button className='btn-style' onClick={() => minus(_id)}>Shipped</button>
+                            <Button variant="flat" onClick={() => minus(_id)}>Shipped</Button>
                         </Col>
                         <Col xs={12} md={6}>
                             <div className='p-3'>
@@ -99,8 +99,25 @@ const SingleItem = () => {
                                 <form>
                                     <input onChange={inputValue} className='form-control mt-3 w-50' type="text" />
                                     <p>{error}</p>
-                                    <button  onClick={() => updateQuentity(_id)} className='mt-2 btn-style'>Update</button>
-                                    
+                                    <Button variant="flat" onClick={() => updateQuentity(_id)} >Update</Button>
+                                    <>
+                                        <style>
+                                            {`
+                                            .btn-flat {
+                                              background-color:#FF8C32;
+                                              color: white;
+                                            }
+                                        
+                                            .btn-xl {
+                                              padding: 1rem 1.5rem;
+                                              font-size: 1.5rem;
+                                            }
+                                            `}
+                                        </style>
+
+                                       
+                                    </>
+
                                 </form>
                             </div>
                         </Col>

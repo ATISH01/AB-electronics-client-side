@@ -6,7 +6,7 @@ import './Products.css'
 const Products = () => {
     const [products,setProducts]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/allItems')
+        fetch('https://arcane-wave-79126.herokuapp.com/allItems')
         .then(res=>res.json())
         .then(data=>setProducts(data.slice(0,6)))
     },[])

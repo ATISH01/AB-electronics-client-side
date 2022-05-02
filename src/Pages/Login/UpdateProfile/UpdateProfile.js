@@ -26,7 +26,7 @@ const UpdateProfile = () => {
     }
 
     return (
-        <div>
+        <div className='p-5'>
             <form className='mx-auto w-25 mt-4' onSubmit={handleSubmit(onSubmit)}>
                 <h3>Give a user name</h3>
                 <input {...register("firstName")} className='form-control'/>

@@ -2,17 +2,19 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
-import { Col, Row } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebse.init';
 import './SignUp.css'
+import { AiOutlineGoogle} from "react-icons/ai";
 
 const SignUp = () => {
     const navigate=useNavigate();
+    const [signInWithGoogle, googleUser, loading, error] = useSignInWithGoogle(auth);
     const [
         createUserWithEmailAndPassword,user
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth,{ sendEmailVerification: true });
     const formSchema = Yup.object().shape({
 
         email:Yup.string().email().required('Input Valid Email'),
@@ -31,16 +33,28 @@ const SignUp = () => {
         console.log(data);
         createUserWithEmailAndPassword(data.email,data.password);
     }
-    if(user){
-        navigate('/username')
+    
+    if(user||googleUser){
+        navigate('/')
     }
     return (
         <Row  md={3} className="g-0">
             <Col xs={12} md={7} className="mx-auto">
-            <div className="container mt-5 p-3">
+            <div className="container p-3">
             
             <form onSubmit={handleSubmit(onSubmit)} className='signup-css'>
             <h2>SignUp Here</h2>
+            <div className="form-group">
+                    <label>Name</label>
+                    <input
+                        name="name"
+                        type="text"
+                        {...register('name')}
+                        className="form-control field-color"
+                    />
+                    
+
+                </div>
                 <div className="form-group">
                     <label>Email</label>
                     <input
@@ -75,9 +89,12 @@ const SignUp = () => {
                 </div>
                 <p>already have an account? <Link to='/login'>Login</Link></p>
                 <div className="mt-3">
-                    <button type="submit" className="btn-style">
+                    <button type="submit"  className="btn-style">
                         Submit
                     </button>
+                    <Button onClick={()=>signInWithGoogle()} className='d-block mt-3' variant="danger">
+                         <AiOutlineGoogle/><span className='ms-2'>Sign In with Google</span>
+                    </Button>
                 </div>
             </form>
         </div>

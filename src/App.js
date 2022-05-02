@@ -10,6 +10,8 @@ import AddItems from './Pages/AddItems/AddItems';
 import MyItems from './Pages/MyItems/MyItems';
 import UpdateProfile from './Pages/Login/UpdateProfile/UpdateProfile';
 import Header from './Pages/Shared/Header/Header';
+import Footer from './Pages/Shared/Footer/Footer';
+import ResetPassword from './Pages/Login/ResetPassword/ResetPassword';
 
 function App() {
   return (
@@ -32,7 +34,9 @@ function App() {
           <MyItems></MyItems>
         </RequireAuth>}></Route>
         <Route path='/username' element={<UpdateProfile></UpdateProfile>}></Route>
+        <Route path='/reset' element={<ResetPassword></ResetPassword>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

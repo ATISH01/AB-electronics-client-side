@@ -10,7 +10,7 @@ const ManageItems = () => {
     const handleDelete = id =>{
         const agree = window.confirm('Are you agee?')
         if(agree){
-            const url = `http://localhost:5000/allItems/${id}`;
+            const url = `https://arcane-wave-79126.herokuapp.com/allItems/${id}`;
             fetch(url,{
                 method:"DELETE"
             })
@@ -28,10 +28,10 @@ const ManageItems = () => {
         navigate('/additems')
     }
     return (
-        <div>
+        <div className='p-3 mb-2'>
             <div className='text-button'>
                 <h5>To add new item click here</h5>
-            <button className='btn-style' onClick={AddButton}>Add new</button>
+            <button className='btn-style mt-3' onClick={AddButton}>Add new</button>
             </div>
             
             {
