@@ -10,7 +10,9 @@
     display: flex;
 }
 .review-item img{
-    width: 191px;
+    width: 100px;
+    height: 80px;
+    margin-top: 12px;
 }
 
 .review-item-details p{

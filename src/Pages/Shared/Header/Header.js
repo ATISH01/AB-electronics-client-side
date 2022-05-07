@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebse.init';
 import ActiveLink from '../ActiveLink';
+import logo from '../../../Assets/logo (2).png'
 
 import './Header.css'
 
@@ -25,8 +26,9 @@ const Header = () => {
             <Navbar collapseOnSelect sticky='top' expand="lg" variant="dark"
                 className={navBar ? 'navbar colored' : 'navbar shadow-sm'}>
                 <Container>
-                    <Navbar.Brand className='text-white fw-bold' to="/">
-                        AB Electronics
+                    <Navbar.Brand className='text-white fw-bold d-flex align-items-center' to="/">
+                        <img className='me-2' height={50} src={logo} alt="" />
+                        <h4>AB Electronics</h4>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">

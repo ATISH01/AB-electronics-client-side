@@ -1,9 +1,10 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { AiOutlineGoogle, AiFillFacebook, AiFillTwitterCircle, AiFillInstagram, AiOutlineArrowRight,AiOutlinePhone,AiOutlineMail} from "react-icons/ai";
+import { AiOutlineGoogle, AiFillFacebook, AiFillTwitterCircle, AiFillInstagram, AiOutlineArrowRight, AiOutlinePhone, AiOutlineMail } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { FaFax } from "react-icons/fa";
 import './Footer.css'
+import logo from '../../../Assets/logo (2).png'
 
 const Footer = () => {
     return (
@@ -16,7 +17,10 @@ const Footer = () => {
                         </div>
 
                         <div className='mt-3'>
-                            <h4 className='text-white'>AB Electronics</h4>
+                            <div className='d-flex align-items-center'>
+                                <img className='me-2' height={50} src={logo} alt="" />
+                                <h4 className='text-white'>AB Electronics</h4>
+                            </div>
                             <small>Transport offers a host of logistic management services and supply chain solutions. We provide innovative solutions with the best people, processes, and technology.</small>
                         </div>
                         <div className='mt-3'>
@@ -52,12 +56,12 @@ const Footer = () => {
                         <div className='my-5 tite-border'>
                             <h3 className='text-white p-1 ms-2 '>Our Office</h3>
                         </div>
-                        
-                                <div className='my-1'><GoLocation /> <strong>Anderkilla,Chittagong,Bangladesh</strong></div>
-                                <div className='my-1'><AiOutlinePhone /> <strong>+8819111111</strong></div>
-                                <div className='my-1'><AiOutlineMail /> <strong>abelectronics@gmail.com</strong></div>
-                                <div>
-                        <div className='my-1'><FaFax /> <strong>+8809876</strong></div>
+
+                        <div className='my-1'><GoLocation /> <strong>Anderkilla,Chittagong,Bangladesh</strong></div>
+                        <div className='my-1'><AiOutlinePhone /> <strong>+8819111111</strong></div>
+                        <div className='my-1'><AiOutlineMail /> <strong>abelectronics@gmail.com</strong></div>
+                        <div>
+                            <div className='my-1'><FaFax /> <strong>+8809876</strong></div>
                         </div>
                     </Col>
                 </Row>

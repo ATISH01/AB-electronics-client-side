@@ -13,7 +13,8 @@ const Allitem = ({ handleDelete, items }) => {
             <div>
                 <Col xs={11} md={6} className='review-item mx-auto mt-5 d-flex justify-content-around manage-item-card'>
                     <div>
-                        <img  src={img} alt="" />
+                        
+                        <img className='image-style-allitem' src={img} alt="" />
                     </div>
                     
                         <div className="review-item-details-container d-flex align-items-center">

@@ -1,26 +1,41 @@
-import { Button } from 'react-bootstrap';
 import React from 'react';
 import Allitem from '../Allitem/Allitem';
 import useAlldata from '../useAllData/useAllData';
 import './ManageItems.css'
 import {  useNavigate } from 'react-router-dom';
+import swal from 'sweetalert';
 
 const ManageItems = () => {
     const [allItems,setItems]=useAlldata();
     const handleDelete = id =>{
-        const agree = window.confirm('Are you agee?')
-        if(agree){
-            const url = `https://arcane-wave-79126.herokuapp.com/allItems/${id}`;
-            fetch(url,{
-                method:"DELETE"
-            })
-            .then(res=>res.json())
-            .then(data=>{
-                console.log(data);
-                const remain = allItems.filter(items=>items._id!==id);
-                setItems(remain)
-            })
-        }
+        
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+                const url = `http://localhost:5000/allItems/${id}`;
+                fetch(url,{
+                    method:"DELETE"
+                })
+                .then(res=>res.json())
+                .then(data=>{
+                    console.log(data);
+                    swal("Poof! Your imaginary file has been deleted!", {
+                        icon: "success",})
+                    const remain = allItems.filter(items=>items._id!==id);
+                    setItems(remain)
+                })
+            } else {
+              swal("Your data file is safe!");
+            }
+          });
+        
+        
             
     }
     const navigate = useNavigate()

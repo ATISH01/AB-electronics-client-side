@@ -18,7 +18,7 @@ const AddItems = () => {
     const { errors } = formState;
     const onSubmit = data => {
         console.log(data);
-        const url='https://arcane-wave-79126.herokuapp.com/allItems';
+        const url='http://localhost:5000/allItems';
         fetch(url,{
             method:'POST',
             headers:{
