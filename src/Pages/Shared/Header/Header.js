@@ -27,7 +27,7 @@ const Header = () => {
                 className={navBar ? 'navbar colored' : 'navbar shadow-sm'}>
                 <Container>
                     <Navbar.Brand className='text-white fw-bold d-flex align-items-center' to="/">
-                        <img className='me-2' height={50} src={logo} alt="" />
+                        <img className='me-2' height={30} src={logo} alt="" />
                         <h4>AB Electronics</h4>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
