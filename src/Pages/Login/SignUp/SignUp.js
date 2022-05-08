@@ -38,6 +38,8 @@ const SignUp = () => {
         navigate('/')
     }
     return (
+
+        // react hook form 
         <Row  md={3} className="g-0">
             <Col xs={12} md={7} className="mx-auto">
             <div className="container p-3">
@@ -92,6 +94,8 @@ const SignUp = () => {
                     <button type="submit"  className="btn-style">
                         Submit
                     </button>
+
+                    {/* sign in with google  */}
                     <Button onClick={()=>signInWithGoogle()} className='d-block mt-3' variant="danger">
                          <AiOutlineGoogle/><span className='ms-2'>Sign In with Google</span>
                     </Button>

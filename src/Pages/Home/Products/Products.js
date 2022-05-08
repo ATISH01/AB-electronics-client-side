@@ -16,6 +16,7 @@ const Products = () => {
             navigate('/manageitems')
     }
     return (
+        // all product list 
         <div>
             
             <div className='m-4'>

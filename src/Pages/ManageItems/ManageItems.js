@@ -8,7 +8,7 @@ import swal from 'sweetalert';
 const ManageItems = () => {
     const [allItems,setItems]=useAlldata();
     const handleDelete = id =>{
-        
+        // confirmation alert 
         swal({
             title: "Are you sure?",
             text: "Once deleted, you will not be able to recover this imaginary file!",

@@ -11,6 +11,8 @@ const Product = ({ product }) => {
 
     }
     return (
+
+        // single product showing 
         <div>
             <Col className='p-4 mx-auto'>
                 <Card className='card-color'>

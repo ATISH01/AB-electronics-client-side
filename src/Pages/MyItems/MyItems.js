@@ -72,6 +72,7 @@ const MyItems = () => {
                     <h4>Name:{user.displayName}</h4>
                     <h6>Email:{user.email}</h6>
                     </div>
+                    
                 </Col>
             </Row>
         </div>

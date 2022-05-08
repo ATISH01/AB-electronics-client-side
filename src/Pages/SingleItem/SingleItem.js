@@ -87,8 +87,8 @@ const SingleItem = () => {
                     <img className='img-fluid p-3 mb-4' src={img} alt="" />
                 </Col>
                 <Col xs={12} md={6}>
-                    <Row md={2}>
-                        <Col xs={12} md={6} className='p-3'>
+                    <Row md={2} className='g-0'>
+                        <Col xs={12} md={6} className='py-1 pe-2'>
                             <h4>{name}</h4>
                             <p>ProductID:{_id}</p>
                             <p>{description}</p>
@@ -98,14 +98,16 @@ const SingleItem = () => {
                             <p>Supplier:-{supplier}</p>
                             <Button variant="flat" onClick={() => minus(_id)}>Shipped</Button>
                         </Col>
-                        <Col xs={12} md={6}>
-                            <div className='p-3'>
+                        <Col xs={12} md={6} className='mx-auto'>
+                            <div className='mb-4'>
                                 <h4>Update Stock for New Shipment</h4>
                                 <form>
-                                    <input onChange={inputValue} className='form-control mt-3 w-50' type="text" />
+                                    <input onChange={inputValue} className='form-control mt-3 w-75' type="text" />
                                     <p>{error}</p>
                                     <Button variant="flat" onClick={() => updateQuentity(_id)} >Update</Button>
                                     <Button className='mt-4 d-block' onClick={toManagePage} variant="flat">Manage Inventory</Button>
+
+                                    {/* custom button style  */}
                                     <>
                                         <style>
                                             {`

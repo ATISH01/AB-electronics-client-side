@@ -5,12 +5,13 @@ import './Shipping.css'
 
 const Shipping = () => {
     return (
+        // form for shipping address details 
         <div className='backgroundImg'>
             <Row md={3} className="g-0">
                 <Col md={6}></Col>
-                <Col xs={12} md={6} className="mx-auto">
+                <Col xs={12} md={4} className="mx-auto">
 
-                    <Form className='w-75 mt-5 p-5 mx-auto'>
+                    <Form className='w-100 mt-5 p-5 mx-auto'>
                         <div className='m-1'>
                             <h3>Book Now For free Shipping</h3>
                             <p>We provide free shipping world wide.We shipped product with care.You will get your product as you want.</p>

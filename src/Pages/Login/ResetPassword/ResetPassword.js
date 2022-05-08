@@ -17,7 +17,7 @@ const ResetPassword = () => {
         toast('Reset link send')
     }
     return (
-
+//  reset password form 
         <Row className='g-0'> 
             <Col md={4}></Col>
             <Col md={4}>

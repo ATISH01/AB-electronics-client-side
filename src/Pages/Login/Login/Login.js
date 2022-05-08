@@ -60,6 +60,7 @@ const Login = () => {
                     </Form.Group>
                     <p>{error?.message && 'Invalid Email or Password'}</p>
                     <p>New to AB Electronics? <Link className='text-decoration-none' to="/signup">SignUp</Link></p>
+                    {/* forget password  */}
                        <p>Forget password? <Link to='/reset' className=' text-decoration-none'>Reset</Link></p>
                     <button className='btn-style' type="submit">
                         Submit

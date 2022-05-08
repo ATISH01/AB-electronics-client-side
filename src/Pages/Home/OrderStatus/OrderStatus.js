@@ -6,6 +6,7 @@ import './OrderStatus.css'
 
 const OrderStatus = () => {
     return (
+        // card 
         <div className='mt-5'>
             <div className="container p-5">
                     <div className="row">

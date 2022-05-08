@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { FaTrashAlt } from "react-icons/fa";
 import './Allitem.css'
 
@@ -28,6 +28,7 @@ const Allitem = ({ handleDelete, items }) => {
                         </div>
 
                     </Col>
+                    {/* handle delete button  */}
                     <Col md={3} xs={3}>
                         <div className="delete-container">
                             <button className='d-block mx-auto delete-button' onClick={() => handleDelete(_id)}>
@@ -38,24 +39,7 @@ const Allitem = ({ handleDelete, items }) => {
                     </Col>
 
 
-                    {/* <div>
-                        <img className=' rounded' src={img} alt="" />
-                    </div>
-
-                    <div className="review-item-details-container d-flex align-items-center">
-                        <div className="review-item-details me-4">
-                            <h4 className="product-name">
-                                {name}
-                            </h4>
-
-                        </div>
-                        <div className="delete-container">
-                            <button className='delete-button' onClick={() => handleDelete(_id)}>
-                                <FaTrashAlt />
-                            </button>
-
-                        </div>
-                    </div> */}
+                   
                 </Col>
             </div>
         </div>
