@@ -21,7 +21,7 @@ const Footer = () => {
                                 <img className='me-2' height={50} src={logo} alt="" />
                                 <h4 className='text-white'>AB Electronics</h4>
                             </div>
-                            <small>Transport offers a host of logistic management services and supply chain solutions. We provide innovative solutions with the best people, processes, and technology.</small>
+                            <small>AB Electronis also offers a host of logistic management services and supply chain solutions. We provide innovative solutions with the best people, processes, and technology.</small>
                         </div>
                         <div className='mt-3'>
                             <AiOutlineGoogle className='icon-size me-3' />

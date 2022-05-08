@@ -10,9 +10,9 @@
     display: flex;
 }
 .review-item img{
-    width: 100px;
-    height: 80px;
-    margin-top: 12px;
+    width: 130px;
+    height: 99px;
+    
 }
 
 .review-item-details p{
@@ -38,6 +38,7 @@
     border-radius: 50%;
     cursor: pointer;
     font-size: 25px;
+    margin-top: 25px;
 }
 
 .delete-icon{
@@ -45,5 +46,5 @@
     font-size: 27px;
 }
 .product-name{
-    margin: 40px 0px;
+    margin: 9px 0px;
 }

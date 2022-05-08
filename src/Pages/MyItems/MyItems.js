@@ -10,15 +10,17 @@ import './MyItems.css'
 
 const MyItems = () => {
     const [user]=useAuthState(auth);
-    console.log(user);
+    
     const [myItems,setmyItems]=useState([])
     useEffect(()=>{
         const getMyItems = async()=>{
             const email= user.email;
-        const url =`http://localhost:5000/myItems?email=${email}`;
+            console.log(email);
+            console.log(localStorage.getItem('accessToken'));
+        const url =`https://arcane-wave-79126.herokuapp.com/myItems?email=${email}`;
         const {data}= await axios.get(url,{
             headers:{
-                authorize:`Bearer ${localStorage.getItem('accessToken')}`
+                authorization:`Bearer ${localStorage.getItem('accessToken')}`
             }
         })
         setmyItems(data)
@@ -36,13 +38,13 @@ const MyItems = () => {
           })
           .then((willDelete) => {
             if (willDelete) {
-                const url = `http://localhost:5000/allItems/${id}`;
+                const url = `https://arcane-wave-79126.herokuapp.com/allItems/${id}`;
             fetch(url,{
                 method:"DELETE"
             })
             .then(res=>res.json())
             .then(data=>{
-                console.log(data);
+                
                 const remain = myItems.filter(items=>items._id!==id);
                 setmyItems(remain)
             })

@@ -18,14 +18,14 @@ const ManageItems = () => {
           })
           .then((willDelete) => {
             if (willDelete) {
-                const url = `http://localhost:5000/allItems/${id}`;
+                const url = `https://arcane-wave-79126.herokuapp.com/allItems/${id}`;
                 fetch(url,{
                     method:"DELETE"
                 })
                 .then(res=>res.json())
                 .then(data=>{
                     console.log(data);
-                    swal("Poof! Your imaginary file has been deleted!", {
+                    swal("Deleted!", {
                         icon: "success",})
                     const remain = allItems.filter(items=>items._id!==id);
                     setItems(remain)
@@ -50,7 +50,7 @@ const ManageItems = () => {
             </div>
             
             {
-                allItems.map(items=><Allitem items={items} handleDelete={handleDelete}></Allitem>)
+                allItems.map(items=><Allitem items={items} key={items._id} handleDelete={handleDelete}></Allitem>)
             }
         </div>
     );

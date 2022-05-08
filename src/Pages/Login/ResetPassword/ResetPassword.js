@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import auth from '../../../firebse.init';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 const ResetPassword = () => {
     const [sendPasswordResetEmail, sending, error2] = useSendPasswordResetEmail(auth, { sendPasswordResetEmail: true });
@@ -32,10 +33,13 @@ const ResetPassword = () => {
                         <Button variant="flat" onClick={handleReset} className='d-block mx-auto w-100'>Send reset link</Button>
                     </div>
                     <div>
-                        <p className='ms-5 mb-5 ps-2'>or create new account</p> 
+                        <Link to='/signup' className='ms-5 mb-5 ps-2 text-decoration-none'>or create new account</Link>
+                        
                     </div>
                     <ToastContainer />
                 </form>
+
+                {/* button style  */}
                 <style>
                   {`
                   .btn-flat {

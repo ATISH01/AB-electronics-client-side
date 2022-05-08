@@ -26,7 +26,7 @@ const Header = () => {
             <Navbar collapseOnSelect sticky='top' expand="lg" variant="dark"
                 className={navBar ? 'navbar colored' : 'navbar shadow-sm'}>
                 <Container>
-                    <Navbar.Brand className='text-white fw-bold d-flex align-items-center' to="/">
+                    <Navbar.Brand className='text-white fw-bold d-flex align-items-center' as={Link} to="/">
                         <img className='me-2' height={30} src={logo} alt="" />
                         <h4>AB Electronics</h4>
                     </Navbar.Brand>
@@ -49,7 +49,7 @@ const Header = () => {
                                     user && <ActiveLink className=' hover-underline-animation' as={Link} to="/myitem">MyItems</ActiveLink>
                                 }
                                 <Nav.Link className='text-white' > <strong>{user?.displayName}</strong></Nav.Link>
-
+                                <ActiveLink className='hover-underline-animation' as={Link} to='/blogs'>Blogs</ActiveLink>
                             </Nav>
                         </Nav>
                     </Navbar.Collapse>

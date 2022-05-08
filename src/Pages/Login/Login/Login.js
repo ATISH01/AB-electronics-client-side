@@ -36,9 +36,10 @@ const Login = () => {
         console.log(userData.email);
         const email = userData.email;
         await signInWithEmailAndPassword(userData.email, userData.password)
-        const { data } = await axios.post('http://localhost:5000/login', { email });
-        console.log(data);
-        localStorage.setItem('accessToken', data.accessToken);
+        const { data } = await axios.post('https://arcane-wave-79126.herokuapp.com/login', { email });
+        console.log(data.accessToken);
+        localStorage.setItem('accessToken',data.accessToken);
+        navigate(from, { replace: true });
         
     }
    

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Col, Form, Row } from 'react-bootstrap';
-import shipping from '../../../Assets/shipping.png'
+import { Col, Form, Row } from 'react-bootstrap';
+
 import './Shipping.css'
 
 const Shipping = () => {

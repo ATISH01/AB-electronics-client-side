@@ -12,6 +12,8 @@ import UpdateProfile from './Pages/Login/UpdateProfile/UpdateProfile';
 import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
 import ResetPassword from './Pages/Login/ResetPassword/ResetPassword';
+import Blogs from './Pages/Blogs/Blogs';
+import NotfoundPage from './Pages/404page/NotfoundPage';
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
         </RequireAuth>}></Route>
         <Route path='/username' element={<UpdateProfile></UpdateProfile>}></Route>
         <Route path='/reset' element={<ResetPassword></ResetPassword>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='*' element={<NotfoundPage></NotfoundPage>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

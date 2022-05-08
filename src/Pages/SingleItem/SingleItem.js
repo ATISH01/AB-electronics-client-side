@@ -8,12 +8,12 @@ const SingleItem = () => {
     const { Id } = useParams();
     const [single, setSingle] = useState({});
     const [error, setError] = useState('');
-    const { _id, name, img, description, price, quentity, supplier } = single;
+    const { _id, name, img, description, price, quentity, supplier, sold } = single;
     useEffect(() => {
-        fetch(`http://localhost:5000/allItems/${Id}`)
+        fetch(`https://arcane-wave-79126.herokuapp.com/allItems/${Id}`)
             .then(res => res.json())
             .then(data => setSingle(data))
-    }, [])
+    }, [Id])
 
 
     const minus = (ID) => {
@@ -22,7 +22,7 @@ const SingleItem = () => {
             console.log(`{id:${i}}`);
             console.log(single);
 
-            const url = `http://localhost:5000/allItems/${ID}`;
+            const url = `https://arcane-wave-79126.herokuapp.com/allItems/${ID}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -59,7 +59,7 @@ const SingleItem = () => {
 
         console.log(parseFloat(newQuentity));
         const update = { ...single, quentity: newQuentity }
-        const url = `http://localhost:5000/allItems/${ID}`;
+        const url = `https://arcane-wave-79126.herokuapp.com/allItems/${ID}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -90,15 +90,17 @@ const SingleItem = () => {
                     <Row md={2}>
                         <Col xs={12} md={6} className='p-3'>
                             <h4>{name}</h4>
+                            <p>ProductID:{_id}</p>
                             <p>{description}</p>
                             <p>Price:{price}</p>
                             <p>Quentity:-{quentity}</p>
+                            <p>Sold:-{sold}</p>
                             <p>Supplier:-{supplier}</p>
                             <Button variant="flat" onClick={() => minus(_id)}>Shipped</Button>
                         </Col>
                         <Col xs={12} md={6}>
                             <div className='p-3'>
-                                <h4>Update Quentity for New Shipment</h4>
+                                <h4>Update Stock for New Shipment</h4>
                                 <form>
                                     <input onChange={inputValue} className='form-control mt-3 w-50' type="text" />
                                     <p>{error}</p>

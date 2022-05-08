@@ -16,13 +16,13 @@ const Product = ({ product }) => {
                 <Card className='card-color'>
                     <Card.Img className='imgClip' variant="top" src={img} />
                     <Card.Body>
-                        <Card.Title >{name}</Card.Title>
+                        <Card.Title > <strong>{name}</strong> </Card.Title>
                         <Card.Text className='m-0'>
                             {description}
                         </Card.Text>
-                        <p className='m-0'>Price:{price}</p>
-                        <p className='m-0'>Quentity:-{quentity}</p>
-                        <p className='m-0'>Supplier:-{supplier}</p>
+                        <p className='m-0'> <strong>Price:</strong> {price}</p>
+                        <p className='m-0'> <strong>Quentity:-</strong> {quentity}</p>
+                        <p className='m-0'> <strong>Supplier:-{supplier}</strong> </p>
                     </Card.Body>
                     <button className='button text-white' onClick={() => handleNavigate(_id)}><p className='button-text'>Update Item</p></button>
                 </Card>
